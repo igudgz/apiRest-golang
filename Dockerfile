@@ -1,9 +1,16 @@
-FROM golang:1.16
 
-WORKDIR /go/src/app
+
+FROM golang:latest
+
+RUN mkdir -p /go/src/github.com/user/app/
+COPY . /go/src/github.com/user/app/
+WORKDIR /go/src/github.com/user/app/
 COPY . .
+COPY go.mod ./
+COPY go.sum ./
+RUN go mod download
 
-RUN go get -d -v ./...
-RUN go install -v ./...
 
-CMD ["app"]
+
+
+CMD ["go", "run", "main.go"]
