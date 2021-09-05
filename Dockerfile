@@ -1,8 +1,9 @@
-FROM golang:1.6-alpine
+FROM golang:1.16
 
-RUN mkdir /build
-WORKDIR /build
+WORKDIR /go/src/app
+COPY . .
 
-RUN export GO111MODULE=0N
+RUN go get -d -v ./...
+RUN go install -v ./...
 
-RUN go get github.com/igudgz/desafioMoneri/src
+CMD ["app"]
