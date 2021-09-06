@@ -6,7 +6,7 @@ Projeto feito com a linguagem golang e o framework fiber.
 
 
 ## Inicialição do projeto
--Com a ferramenta Go já instalada em seu computador clone o projeto e abra o terminal na pasta src e digite `ro run main.go`.
+-Com a ferramenta Go já instalada em seu computador clone o projeto e abra o terminal na pasta src e digite `go run main.go`.
 
 
 
